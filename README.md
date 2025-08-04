@@ -43,13 +43,16 @@
 
        → 수출금액의 분해요소 중 Residual요소 추가 입력변수로 활용
 
-       → 전체 데이터 MinMax Scaling 적용 & T+1 ~ T+6 Multi Horizon Forecast 문제 정의 
+       → 전체 데이터 MinMax Scaling 적용 & T+1 ~ T+6 Multi Horizon Forecast 문제 정의
+
+       → Monte Carlo Dropout기반 확률적 추론모델 구축 
 
   - 2.) 모델 해석 추가 
 
        → Target(수출금액)에 대한 입력변수들의 Gradient Tape 계산 & Y=Ax모델에 대한 입력값들의 기울기 기반 가중치 나열 
 
-       
+
+---
 
 
 
