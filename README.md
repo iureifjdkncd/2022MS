@@ -51,7 +51,7 @@
 
        → Target(수출금액)에 대한 입력변수들의 Gradient Tape 계산 & Y=Ax모델에 대한 입력값들의 기울기 기반 가중치 나열
 
-        <img width="445" height="396" alt="다운로드 (4)" src="https://github.com/user-attachments/assets/1cec0708-839f-4802-a678-724250a55209" />
+      <img width="445" height="396" alt="다운로드 (4)" src="https://github.com/user-attachments/assets/1cec0708-839f-4802-a678-724250a55209" />
 
 
 ---
@@ -80,17 +80,19 @@
 
    - 3.) 추론 결합
 
-        → MAPE기준 VECM이 가장 우수한 점에서 VECM을 기본 & Monte Carlo Dropout LSTM Seq2Seq 보조로 활용 
+        → 점추정은 VECM & Monte Carlo Dropout LSTM Seq2Seq 상호보완 
+
+        → Prediction Interval은 VECM기반으로 정의 
 
         <img width="311" height="351" alt="화면 캡처 2025-08-04 150502" src="https://github.com/user-attachments/assets/19a848e5-2574-494d-a32c-6775a88969ce" />
 
 
 ---
 
-### BI 활용방안 
+### BI 활용방안 예시
 
-    - 1.) 수출금액 품목별 예측구간 제공 
+  - 1.) 수출금액 품목별 예측구간 제공 
 
-        <img width="739" height="284" alt="화면 캡처 2025-08-04 150728" src="https://github.com/user-attachments/assets/a17c4b4c-f834-4463-a39d-399df86368ba" />
+      <img width="739" height="284" alt="화면 캡처 2025-08-04 150728" src="https://github.com/user-attachments/assets/a17c4b4c-f834-4463-a39d-399df86368ba" />
 
 ---
