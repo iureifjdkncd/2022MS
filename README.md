@@ -67,7 +67,7 @@
         <img width="498" height="270" alt="다운로드 (1)" src="https://github.com/user-attachments/assets/6064dc37-79d0-4c07-9a82-8b494824651f" />
 
 
-    - 2.) 딥러닝 시계열 예측 결과 
+   - 2.) 딥러닝 시계열 예측 결과 
 
         → 최초 N-30기반 Monte Carlo Dropout기반 추론 결과 정의 
 
@@ -78,7 +78,7 @@
         <img width="493" height="270" alt="다운로드 (3)" src="https://github.com/user-attachments/assets/d5aa4a71-7aa2-4c17-a9d3-f9d44ef34a32" />
 
 
-    - 3.) 추론 결합
+   - 3.) 추론 결합
 
         → MAPE기준 VECM이 가장 우수한 점에서 VECM을 기본 & Monte Carlo Dropout LSTM Seq2Seq 보조로 활용 
 
@@ -88,5 +88,9 @@
 ---
 
 ### BI 활용방안 
-        
 
+    - 1.) 수출금액 품목별 예측구간 제공 
+
+        <img width="739" height="284" alt="화면 캡처 2025-08-04 150728" src="https://github.com/user-attachments/assets/a17c4b4c-f834-4463-a39d-399df86368ba" />
+
+---
