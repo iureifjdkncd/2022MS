@@ -97,3 +97,10 @@
       <img width="739" height="284" alt="화면 캡처 2025-08-04 150728" src="https://github.com/user-attachments/assets/a17c4b4c-f834-4463-a39d-399df86368ba" />
 
 ---
+
+
+#### 한국지능정보시스템학회 논문작성 링크 
+
+   https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11207563
+
+---
