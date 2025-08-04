@@ -45,14 +45,29 @@
 
        → 전체 데이터 MinMax Scaling 적용 & T+1 ~ T+6 Multi Horizon Forecast 문제 정의
 
-       → Monte Carlo Dropout기반 확률적 추론모델 구축 
+       → Monte Carlo Dropout기반 확률적 추론모델 구축 (30개의 Multi Horizon Forecast 수행)
 
   - 2.) 모델 해석 추가 
 
        → Target(수출금액)에 대한 입력변수들의 Gradient Tape 계산 & Y=Ax모델에 대한 입력값들의 기울기 기반 가중치 나열 
 
-
 ---
+
+### 추론 프로세스 
+
+   - 1.) 통계시계열 예측 결과 
+
+       → ARIMA,HoltWinters,VECM 예측결과의 평균적인 움직임 정의
+
+        <img width="493" height="270" alt="다운로드" src="https://github.com/user-attachments/assets/f577f59c-58c9-45bc-92cd-f4736a929303" />
+
+
+       → VECM 기반 Prediction Interval 정의
+
+        <img width="498" height="270" alt="다운로드 (1)" src="https://github.com/user-attachments/assets/6064dc37-79d0-4c07-9a82-8b494824651f" />
+
+
+
 
 
 
