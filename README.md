@@ -19,7 +19,7 @@
   - 3.) 전체 데이터 학습 & 2022.01 ~ 2022.06 Test 정의 
 
 ---
-### 학습 프로세스 1 --> 통계 시계열 
+### 학습 프로세스 1 --> 통계 시계열 Multi Horizon Forecast 
 
   - 1.) 단변량 ARIMA & HoltWinters 학습
 
@@ -35,7 +35,7 @@
 
 --- 
 
-### 학습 프로세스 2 --> 딥러닝 시계열 
+### 학습 프로세스 2 --> 딥러닝 시계열 Multi Horizon Forecast
 
   - 1.) 다변량 LSTM Seq2Seq 적용
 
@@ -49,7 +49,10 @@
 
   - 2.) 모델 해석 추가 
 
-       → Target(수출금액)에 대한 입력변수들의 Gradient Tape 계산 & Y=Ax모델에 대한 입력값들의 기울기 기반 가중치 나열 
+       → Target(수출금액)에 대한 입력변수들의 Gradient Tape 계산 & Y=Ax모델에 대한 입력값들의 기울기 기반 가중치 나열
+
+        <img width="445" height="396" alt="다운로드 (4)" src="https://github.com/user-attachments/assets/1cec0708-839f-4802-a678-724250a55209" />
+
 
 ---
 
@@ -57,14 +60,33 @@
 
    - 1.) 통계시계열 예측 결과 
 
-       → ARIMA,HoltWinters,VECM 예측결과 & VECM 기반 Prediction Interval 정의
+       → ARIMA,HoltWinters,VECM 점추정 예측결과 & VECM 기반 Prediction Interval 정의
 
         <img width="493" height="270" alt="다운로드" src="https://github.com/user-attachments/assets/f577f59c-58c9-45bc-92cd-f4736a929303" />
 
         <img width="498" height="270" alt="다운로드 (1)" src="https://github.com/user-attachments/assets/6064dc37-79d0-4c07-9a82-8b494824651f" />
 
 
+    - 2.) 딥러닝 시계열 예측 결과 
+
+        → 최초 N-30기반 Monte Carlo Dropout기반 추론 결과 정의 
+
+        <img width="708" height="274" alt="다운로드 (2)" src="https://github.com/user-attachments/assets/b5ef7eb5-b3da-489d-b571-09124adbc481" />
+
+        → 통계시계열 점추정 예측결과의 평균 움직임 벤치마크 정의 & 해당 벤치마크의 최근접 MCD예측결과 30개중 1 선택 
+
+        <img width="493" height="270" alt="다운로드 (3)" src="https://github.com/user-attachments/assets/d5aa4a71-7aa2-4c17-a9d3-f9d44ef34a32" />
 
 
+    - 3.) 추론 결합
 
+        → MAPE기준 VECM이 가장 우수한 점에서 VECM을 기본 & Monte Carlo Dropout LSTM Seq2Seq 보조로 활용 
+
+        <img width="311" height="351" alt="화면 캡처 2025-08-04 150502" src="https://github.com/user-attachments/assets/19a848e5-2574-494d-a32c-6775a88969ce" />
+
+
+---
+
+### BI 활용방안 
+        
 
