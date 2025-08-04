@@ -57,12 +57,9 @@
 
    - 1.) 통계시계열 예측 결과 
 
-       → ARIMA,HoltWinters,VECM 예측결과의 평균적인 움직임 정의
+       → ARIMA,HoltWinters,VECM 예측결과 & VECM 기반 Prediction Interval 정의
 
         <img width="493" height="270" alt="다운로드" src="https://github.com/user-attachments/assets/f577f59c-58c9-45bc-92cd-f4736a929303" />
-
-
-       → VECM 기반 Prediction Interval 정의
 
         <img width="498" height="270" alt="다운로드 (1)" src="https://github.com/user-attachments/assets/6064dc37-79d0-4c07-9a82-8b494824651f" />
 
