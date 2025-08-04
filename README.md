@@ -84,7 +84,8 @@
 
         → Prediction Interval은 VECM기반으로 정의 
 
-        <img width="311" height="351" alt="화면 캡처 2025-08-04 150502" src="https://github.com/user-attachments/assets/19a848e5-2574-494d-a32c-6775a88969ce" />
+        <img width="544" height="290" alt="화면 캡처 2025-08-04 151209" src="https://github.com/user-attachments/assets/da83d847-dd74-49df-bd22-a01e0631055a" />
+
 
 
 ---
