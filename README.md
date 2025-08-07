@@ -99,6 +99,8 @@
 
 #### 한국지능정보시스템학회 논문작성 링크 
 
+  - 다변량 시계열 예측을 활용한 수출금액 예측에 관한 연구
+
    https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11207563
 
 ---
