@@ -1,53 +1,68 @@
-## 한국 수출금액 예측 모델 기반 기업수요 맞춤형 서비스
+## 🏆 Contest
 
-### 디렉토리 구조
-- `1.) ARIMA.ipynb` 
-- `2.) Vector Error Corretion.ipynb` 
-- `3.) LSTM Seq2Seq.ipynb` 
+### 제10회 산업통상자원부 공공데이터 활용 BI 공모전 최우수상 (KOTRA 사장상 수상)
+
+- 📊과제명: 한국 수출금액 예측 모델 기반 기업수요 맞춤형 서비스
+- 작성 기간: 2022.05 ~ 2022.08
+- 기술 스택: Python, Statsmodels, Scikit-Learn, TensorFlow, Excel, Tableau
+- 수상 링크: [Link](https://www.datacontest.kr/board/view/97533073/3694)
+---
+### 🎯 성과 요약
+
+- 한국의 수출금액을 예측하기 위해 **VECM(벡터오차수정모형)**과 **Monte Carlo Dropout 기반 LSTM Seq2Seq** 모델을 병행 적용하여, 최대 97.1%의 예측 정확도를 달성
+
+- **통계 기반 신뢰구간**과 **딥러닝 기반 확률적 예측** 시나리오를 결합함으로써 정확도 향상, 불확실성 해석 가능성 확보, 비즈니스 적용성 강화의 세 요소를 모두 만족하는 하이브리드 예측 시스템 구축
+
+- 예측 결과를 기반으로 품목 추천 로직도 함께 설계하여, 실질적인 기업 맞춤형 서비스로의 확장 가능성도 제시
 ---
 
-### 문제 정의
-
-- 1.) 2022.01 ~ 2022.06의 한국 수출금액 시계열 예측 
+### 📂 디렉토리 구성
+- `1.) ARIMA.ipynb – 단변량 시계열 예측 (ARIMA 기반)
+- `2.) Vector Error Correction.ipynb – 다변량 시계열 예측 (VECM 기반)
+- `3.) LSTM_Seq2Seq.ipynb – 딥러닝 기반 다변량 예측 (Monte Carlo Dropout 포함)
 ---
 
-### 주요 전처리 
-  - 1.) 월별 수출금액 외에 추가 경제 & 무역 데이터 수집 (2000.01 ~ 2021.12)
+### 🎯 문제 정의
 
-  - 2.) 통계 시계열 Vs 딥러닝 시계열 데이터 활용 및 전처리 차이 
+- **목표**: 2022.01 ~ 2022.06 기간의 한국 수출금액 예측
+- **접근법**: 전통 통계 모델과 딥러닝 기반 확률 예측 모델을 병행 적용하여, **정확도 향상**과 **불확실성 해석 가능성**을 동시에 확보
+---
 
-  - 3.) 전체 데이터 학습 & 2022.01 ~ 2022.06 Test 정의 
+### 🧹 주요 전처리
+
+- 1.) **2000.01 ~ 2021.12** 기간의 월별 수출금액 및 관련 경제·무역 지표 수집
+- 2.) 전체 데이터를 기반으로 학습 후, **2022.01 ~ 2022.06** 기간을 Test Data로 분리
+
 
 ---
-### 학습 프로세스 1 --> 통계 시계열 Multi Horizon Forecast 
+### 🧠 학습 프로세스 1 : 통계 기반 Multi-Horizon Forecasting
 
-  - 1.) 단변량 ARIMA & HoltWinters 학습
+  - 1.) ARIMA & Holt-Winters: 단변량 기반 기본 예측
 
-  - 2.) 다변량 VECM 학습
+  - 2.) VECM
 
-       → ADF 검정 기반 변수선택
+    - ADF 검정을 통한 정상성 확보 및 변수 선택
 
-       → Johansen 공정분 검정 & AIC 기반 VECM 모델 구축
+    - Johansen 검정 및 AIC 기반 최적 공적분 차수 설정
 
-       → Granger 인과관계 & 충격반응분석에 의한 다각적 해석 제공 
+    - Granger 인과성 분석 및 충격 반응 분석(Impulse Response Analysis)을 통한 인사이트 도출
 
 --- 
 
-### 학습 프로세스 2 --> 딥러닝 시계열 Multi Horizon Forecast
+### 🧠 학습 프로세스 2 : 딥러닝 기반 Multi-Horizon Forecasting
 
-  - 1.) 다변량 LSTM Seq2Seq 적용
+  - 1.) •	LSTM Seq2Seq(Encoder-Decoder) 모델:
 
-       → 기존 다변량 수집데이터 중 1970년부터 기록이 존재하는 데이터 일부 활용
+    - 1970년부터의 추가 수집한 일부 장기 다변량 데이터를 기반으로 학습
 
-       → 수출금액의 분해요소 중 Residual요소 추가 입력변수로 활용
+    - 수출금액의 **Residual 요소**를 추가 입력으로 활용하여 예측 성능 향상
 
-       → 전체 데이터 MinMax Scaling 적용 & T+1 ~ T+6 Multi Horizon Forecast 문제 정의
+    - **Monte Carlo Dropout** 기반 불확실성 추정 수행 (N=30 반복 생성)
 
-       → Monte Carlo Dropout기반 확률적 추론모델 구축 (30개의 Multi Horizon Forecast 수행)
+  - 2.) Gradient 기반 기여도 분석:
 
-  - 2.) 모델 해석 추가 
-
-       → Target(수출금액)에 대한 입력변수들의 Gradient Tape 계산 & Y=Ax모델에 대한 입력값들의 기울기 기반 가중치 나열
+    - Gradient Tape를 활용한 입력 변수 중요도 분석
+    - Linear 모델 해석(Y = Ax) 기반 변수 영향도 정량화
 
       <img width="445" height="396" alt="다운로드 (4)" src="https://github.com/user-attachments/assets/1cec0708-839f-4802-a678-724250a55209" />
 
