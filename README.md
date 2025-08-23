@@ -2,7 +2,7 @@
 
 ### 제10회 산업통상자원부 공공데이터 활용 BI 공모전 최우수상 (KOTRA 사장상 수상)
 
-- 📊과제명: 한국 수출금액 예측 모델 기반 기업수요 맞춤형 서비스
+- 📊과제명: **한국 수출금액 예측 모델 기반 기업수요 맞춤형 서비스**
 - 작성 기간: 2022.05 ~ 2022.08
 - 기술 스택: Python, Statsmodels, Scikit-Learn, TensorFlow, Excel, Tableau
 - 수상 링크: [Link](https://www.datacontest.kr/board/view/97533073/3694)
@@ -51,7 +51,7 @@
 
 ### 🧠 학습 프로세스 2 : 딥러닝 기반 Multi-Horizon Forecasting
 
-  - 1.) •	LSTM Seq2Seq(Encoder-Decoder) 모델:
+  - 1.) LSTM Seq2Seq(Encoder-Decoder) 모델:
 
     - 1970년부터의 추가 수집한 일부 장기 다변량 데이터를 기반으로 학습
 
@@ -69,11 +69,12 @@
 
 ---
 
-### 추론 프로세스 
+### 🔍 추론 및 해석 
 
-   - 1.) 통계시계열 예측 결과 
+   - 1.) 통계 기반 예측 결과 
 
-       → ARIMA,HoltWinters,VECM 점추정 예측결과 & VECM 기반 Prediction Interval 정의
+     - ARIMA, Holt-Winters, VECM의 **점추정값** 제시
+     - VECM 기반 **Prediction Interval** 제공
 
         <img width="493" height="270" alt="다운로드" src="https://github.com/user-attachments/assets/f577f59c-58c9-45bc-92cd-f4736a929303" />
 
