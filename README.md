@@ -18,9 +18,9 @@
 
 ### 📂 디렉토리 구성
 
-- `1.) ARIMA.ipynb : 단변량 시계열 예측 (ARIMA 기반)
-- `2.) Vector Error Correction.ipynb : 다변량 시계열 예측 (VECM 기반)
-- `3.) LSTM_Seq2Seq.ipynb : 딥러닝 기반 다변량 예측 (Monte Carlo Dropout 포함)
+- `1.) ARIMA.ipynb` : 단변량 시계열 예측 (ARIMA 기반)
+- `2.) Vector Error Correction.ipynb` : 다변량 시계열 예측 (VECM 기반)
+- `3.) LSTM_Seq2Seq.ipynb` : 딥러닝 기반 다변량 예측 (Monte Carlo Dropout 포함)
 ---
 
 ### 🎯 문제 정의
