@@ -64,9 +64,7 @@
     - Gradient Tape를 활용한 입력 변수 중요도 분석
     - Linear 모델 해석(Y = Ax) 기반 변수 영향도 정량화
 
-      <img width="445" height="396" alt="다운로드 (4)" src="https://github.com/user-attachments/assets/1cec0708-839f-4802-a678-724250a55209" />
-
-
+    
 ---
 
 ### 🔍 추론 및 해석 
@@ -81,22 +79,26 @@
         <img width="498" height="270" alt="다운로드 (1)" src="https://github.com/user-attachments/assets/6064dc37-79d0-4c07-9a82-8b494824651f" />
 
 
-   - 2.) 딥러닝 시계열 예측 결과 
+   - 2.) 딥러닝 기반 예측 결과 
 
-        → 최초 N-30기반 Monte Carlo Dropout기반 추론 결과 정의 
+     - MCD 기반 예측 결과로부터 **N=30개의 확률 분포 시나리오** 생성
+     - MCD모델의 Gradient Tape기반 변수 중요도 해석
+     - 통계모델 평균 점추정값을 **벤치마크**로 설정하고, 해당 벤치마크와 가장 가까운 MCD예측 시나리오를 선택 
 
         <img width="708" height="274" alt="다운로드 (2)" src="https://github.com/user-attachments/assets/b5ef7eb5-b3da-489d-b571-09124adbc481" />
 
-        → 통계시계열 점추정 예측결과의 평균 움직임 벤치마크 정의 & 해당 벤치마크의 최근접 MCD예측결과 30개중 1 선택 
+       
 
         <img width="493" height="270" alt="다운로드 (3)" src="https://github.com/user-attachments/assets/d5aa4a71-7aa2-4c17-a9d3-f9d44ef34a32" />
 
+         <img width="445" height="396" alt="다운로드 (4)" src="https://github.com/user-attachments/assets/1cec0708-839f-4802-a678-724250a55209" />
 
-   - 3.) 추론 결합
 
-        → 점추정은 VECM & Monte Carlo Dropout LSTM Seq2Seq 상호보완 
+   - 3.) 결합 추론 전략
 
-        → Prediction Interval은 VECM기반으로 정의 
+     - **점추정**은 VECM과 MCD-LSTM의 상호보완을 통해 안정성 확보 
+
+     - **불확실성 구간**은 VECM 기반 Prediction Interval을 기준으로 정의 
 
         <img width="544" height="290" alt="화면 캡처 2025-08-04 151209" src="https://github.com/user-attachments/assets/da83d847-dd74-49df-bd22-a01e0631055a" />
 
@@ -104,19 +106,19 @@
 
 ---
 
-### BI 활용방안 예시
+### 🧭 BI 활용 방안
 
-  - 1.) 수출금액 품목별 예측구간 제공 
+  - 수출 품목별 예측 구간 제공을 통해 기업 맞춤형 수출 전략 수립 지원
+  - 예측값 기반 품목 추천 시스템 구현 가능성 제시
 
       <img width="739" height="284" alt="화면 캡처 2025-08-04 150728" src="https://github.com/user-attachments/assets/a17c4b4c-f834-4463-a39d-399df86368ba" />
 
 ---
 
 
-#### 한국지능정보시스템학회 논문작성 링크 
+#### 📑 관련 논문 [Link](https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11207563)
 
-  - 다변량 시계열 예측을 활용한 수출금액 예측에 관한 연구
-
-   https://www.dbpia.co.kr/Journal/articleDetail?nodeId=NODE11207563
+  - 논문명: 다변량 시계열 예측을 활용한 수출금액 예측에 관한 연구
+  - 게재처: 한국지능정보시스템학회
 
 ---
